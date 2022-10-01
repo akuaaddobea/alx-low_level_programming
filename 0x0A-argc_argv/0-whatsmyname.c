@@ -7,7 +7,7 @@
  * Return: 0 - success
  */
 
-int main (int agrc __attribute_((unused)), char *agrv[])
+int main (int agrc __attribute__((unused)), char *agrv[])
 
 {
 	printf("%s\n", agrv[0]);
