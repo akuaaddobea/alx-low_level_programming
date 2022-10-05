@@ -30,14 +30,15 @@ int **alloc_grid(int width, int height)
 		if (alloc_grid[i] == NULL)
 	{
 		for (i--; i >= 0; i--)
-			free(gridout[i]);
+			free(alloc_grid[i]);
 		free(alloc_grid);
 		return (NULL);
 	}
 }
 
-for (i = 0; i < height; i++)
+	for (i = 0; i < height; i++)
 	for (j = 0; j < width; j++)
 		gridout[i][j] =0;
+
 	return (alloc_grid);
 }
