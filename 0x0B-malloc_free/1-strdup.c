@@ -4,8 +4,8 @@
 /**
  * _strdup- function returns a pointer to a new string which is a duplicate
  * of the string
- *space in a memory, which contains a copy of the string given as a parameter
- *@str: string to be copied
+ * space in a memory, which contains a copy of the string given as a parameter
+ * @str: string to be copied
  *
  * Return: NULL in case of error, pointer to allocated space
  */
@@ -28,6 +28,5 @@ char *_strdup(char *str)
 	for (j = 0; j <= i; j++)
 
 		strout[j] = str[j];
-
 	return (strout);
 }
