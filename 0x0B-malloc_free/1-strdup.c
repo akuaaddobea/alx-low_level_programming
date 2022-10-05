@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * _strdup() function returns a pointer to a new string which is a duplicate
+ * _strdup- function returns a pointer to a new string which is a duplicate
  * of the string
  *space in a memory, which contains a copy of the string given as a parameter
  *@str: string to be copied
@@ -16,17 +16,17 @@ char *_strdup(char *str)
 	unsigned int i, j;
 
 	if (str == NULL)
-		retun (NULL);
+		return (NULL);
 
 	for (i = 0; str[i] != '\0'; i++);
 
-	strout = (char *)malloc(sizeof(char) * (i+1));
+	strout = (char *)malloc(sizeof(char) * (i + 1));
 
 	if (strout == NULL)
 		return (NULL);
 
-	for (j = 0; j<= i: j++)
+	for (j = 0; j <= i; j++)
 		strout[j] = str[j];
 
-	retun (strout);
+	return (strout);
 }
