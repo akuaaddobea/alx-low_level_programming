@@ -4,7 +4,7 @@
 /**
  * alloc_grid - returns a pointer to a 2 dimensional array of intergers
  * @width: width of grid
- * @height:height of grid 
+ * @height: height of grid
  * Return: Nothing
  */
 int **alloc_grid(int width, int height)
