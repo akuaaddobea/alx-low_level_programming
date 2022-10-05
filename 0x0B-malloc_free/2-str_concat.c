@@ -9,16 +9,31 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *s;
+	char *concat_str;
+	unsigned int i, j, k limit;
 
-	s = str_concat("s1", "s2");
-	if (s == NULL)
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
+	for (j = 0; s2[j] != '\0'; j++)
+		;
+
+	strout = malloc(sizeof(char) * (i +j +1));
+
+	if (strout == NULL)
 	{
-		printf("failed\n");
-		return (1);
+		free(strout);
+		return (NULL);
 	}
-	printf("%s\n", s);
-	free(s)
-	return(0);
+
+	for (k = 0; k< i; K++)
+		strout[k] = s1[k];
+
+	limit = j;
+	for (j = 0; j <= limit; k++, j++)
+		strout[k] = s2[j];
+
+	return (strout);
 }
-		
