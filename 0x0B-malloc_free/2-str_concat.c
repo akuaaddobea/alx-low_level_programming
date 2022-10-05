@@ -22,18 +22,18 @@ char *str_concat(char *s1, char *s2)
 
 	concat_str = malloc(sizeof(char) * (i +j +1));
 
-	if (strout == NULL)
+	if (concat_str == NULL)
 	{
-		free(strout);
+		free(concat_str);
 		return (NULL);
 	}
 
 	for (k = 0; k < i; k++)
-		strout[k] = s1[k];
+		concat_str[k] = s1[k];
 
 	limit = j;
 	for (j = 0; j <= limit; k++, j++)
-		strout[k] = s2[j];
+		concat_str[k] = s2[j];
 
-	return (strout);
+	return (concat_str);
 }
