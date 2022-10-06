@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * len - returns length of str
@@ -27,7 +26,7 @@ char *argstostr(int ac, char **av)
 	char *new_string = NULL;
 	int k = 0, i = ac, j, sum = 0, temp = 0;
 
-	if (ac == 0 \\ av == NULL)
+	if (ac == 0 || av == NULL)
 		return (NULL);
 
 	while (ac--)
