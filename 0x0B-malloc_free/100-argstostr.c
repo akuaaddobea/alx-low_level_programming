@@ -1,49 +1,57 @@
-include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
+i#include "main.h"
 
 /**
- *  * argstostr - concatenates all the arguments of your program
- *   *
- *    * @ac: the argument count
- *     * @av: the array of string aguments
- *      *
- *       * Return: a pointer to the concatenated string
- *        */
+ * *len - returns length of str
+ * *@str: string counted
+ * *Return: returns the length
+ * */
+int len(char *str)
+{
+			int len = 0;
+
+					if (str != NULL)
+								{
+												while (str[len])
+																	len++;
+														}
+						return (len);
+}
+
+/**
+ * * argstostr - a function that concatenates all the arguments of your program
+ * *@ac: count of args passed to the function
+ * *@av:array of arguments
+ * *
+ * *Return: pointer to the new string
+ * */
 
 char *argstostr(int ac, char **av)
 {
-		int i = 0, len = 0, l = 0, j;
-			char *arr;
+			char *new_string = NULL;
+					int k = 0, i = ac, j, sum = 0, temp = 0;
 
-				if (ac == 0 || av == NULL)
-						{
-									return (NULL);
-										}
+							if (ac == 0 || av == NULL)
+											return (NULL);
 
-					for (; i < ac; i++)
-							{
-										for (j = 0; av[i][j]; j++)
-													{
-																	len++;
-																			}
-												len++;
-													}
-						arr = (char *) malloc(sizeof(char) * (len + 1));
+									while (ac--)
+													sum += (len(av[ac]) + 1);
+											new_string = (char *) malloc(sum + 1);
 
-							if (arr == NULL)
-									{
-												return (NULL);
-													}
-								for (i = 0; i < ac; i++)
-										{
-													for (j = 0; av[i][j]; j++)
+													if (new_string != NULL)
 																{
-																				arr[l] = av[i][j];
-																							l++;
+																				while (k < i)
+																								{
+																													for (j = 0; av[k][j] != '\0'; j++)
+																																			new_string[j + temp] = av[k][j];
+																																	new_string[temp + j] = '\n';
+																																					temp += (j + 1);
+																																									k++;
+																																												}
+																							new_string[temp] = '\0';
 																									}
-															 arr[l] = '\n';
-															 		 l++;
-																	 	}
-									return (arr);
+															else
+																		{
+																						return (NULL);
+																								}
+																	return (new_string);
 }
